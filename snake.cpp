@@ -114,5 +114,5 @@ SnakeEntity::SnakeEntity(int width, int height, int x, int y, int initLength)
 
 bool SnakeEntity::checkCollision(int x, int y) const
 {
-    return isOccupying(x, y);
+    return Snake::isOccupying(x, y);
 }

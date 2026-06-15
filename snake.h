@@ -8,11 +8,14 @@ public:
 };
 
 class Snake : public virtual Entity {
+public:
+    enum Direction { UP = 1, RIGHT = 2, DOWN = 3, LEFT = 4 };
+
+    std::pair<int, int> prevTail{0, 0};
+private:
     std::deque<std::pair<int, int>> body;
     Direction dir = RIGHT;
 public:
-    std::pair<int, int> prevTail{0, 0};
-    enum Direction { UP = 1, RIGHT = 2, DOWN = 3, LEFT = 4 };
 
     Snake(int width, int height);
     Snake(int width, int height, int x, int y);
