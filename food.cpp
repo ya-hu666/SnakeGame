@@ -1,5 +1,6 @@
 #include "food.h"
 #include "snake.h"
+#include <Windows.h>
 #include <iostream>
 
 Food::Food() : pos{0, 0} {}
@@ -29,6 +30,8 @@ Food::Food(int width, int height, const SnakeEntity& snake)
 
 void Food::draw() const
 {
+    COORD c = { static_cast<SHORT>(pos.first), static_cast<SHORT>(pos.second) };
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
     std::cout << 'F';
 }
 

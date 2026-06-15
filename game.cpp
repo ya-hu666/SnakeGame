@@ -151,8 +151,6 @@ void Game::draw()
         std::cout << " ";
     }
 
-    gotoxy(food.getPos().first, food.getPos().second);
-
     for (auto* entity : entities) {
         entity->draw();
     }
